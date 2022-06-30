@@ -1,0 +1,30 @@
+<div fxLayout>
+    <mat-card fxFlex="80" fxFlexOffset="10" class="mat-elevation-z8">
+        <div class="title">Welcome to Quiz App</div>
+        <h1>This quiz contains a total of 10 question. Each Question holds 10 marks</h1>
+
+        <div style="font-weight:500; font-size: 20px;">Rules:</div>
+        <ol>
+            <li>Correct Question gives you 10 points</li>
+            <li>Incorrect Question gives you 0 points</li>
+            <li>You qill have 60 sec to answer each question</li>
+            <li>Refreshing the page will reset the quiz</li>
+        </ol>
+
+        <div style="font-family: cursive; font-size: 40px; text-align: center; font-weight: 500;"> All the Best!!</div>
+
+        <div fxLayout fxLayoutGap="30px">
+          <div fxFlex="30">
+            <mat-form-field appearance="outline" fxFlexFill>
+                <mat-label>Enter you name:</mat-label>
+                <input matInput placeholder="your name">
+                <mat-icon matSuffix>person</mat-icon>
+              </mat-form-field>
+          </div>
+        </div>
+
+        <button mat-raised-button color="primary">Start the Quize!!</button>
+
+    </mat-card>
+</div>
+

@@ -1,3 +1,5 @@
+<div style="margin-top: 150px;"><!--spacer--></div>
+
 <div fxLayout>
     <mat-card fxFlex="80" fxFlexOffset="10" class="mat-elevation-z8">
         <div class="title">Welcome to Quiz App</div>
@@ -17,13 +19,15 @@
           <div fxFlex="30">
             <mat-form-field appearance="outline" fxFlexFill>
                 <mat-label>Enter you name:</mat-label>
-                <input matInput placeholder="your name">
+                <input matInput placeholder="your name"  [formControl]="formControl" >
                 <mat-icon matSuffix>person</mat-icon>
               </mat-form-field>
           </div>
         </div>
 
-        <button mat-raised-button color="primary">Start the Quize!!</button>
+
+
+        <button mat-raised-button color="primary" (click)="toQuestions()" [disabled]="formControl.invalid" >Start the Quize!!</button>
 
     </mat-card>
 </div>

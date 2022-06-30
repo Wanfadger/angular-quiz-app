@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+ formControl !:FormControl
+  constructor(private _router:Router) { }
 
   ngOnInit(): void {
+    this.formControl = new FormControl('', [Validators.required])
+  }
+
+  toQuestions(){
+    console.log('ehehehe')
+  this._router.navigate(['Questions'])
   }
 
 }

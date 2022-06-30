@@ -1,0 +1,12 @@
+<div style="margin-top: 20px;"><!--spacer--></div>
+
+<div style="font-size: 20px; font-weight:400;margin-bottom: 10px;">
+    {{question.question}} ?
+</div>
+
+
+<mat-radio-group fxLayout="column">
+  <mat-radio-button *ngFor="let answer of question.answers" [value]="answer" style="padding: 5px;">
+    {{answer.value}}
+  </mat-radio-button>
+</mat-radio-group>

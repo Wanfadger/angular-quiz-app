@@ -1,12 +1,12 @@
 <div style="margin-top: 20px;"><!--spacer--></div>
 
 <div style="font-size: 20px; font-weight:400;margin-bottom: 10px;">
-    {{question.question}} ?
+    {{question ? question.question : ''}}
 </div>
 
 
-<mat-radio-group fxLayout="column" (change)="selectAnswer($event.value)">
-  <mat-radio-button #opt *ngFor="let option of question.options" [value]="option" style="padding: 5px;">
+<mat-radio-group fxLayout="column" (change)="selectAnswer($event.value)" *ngIf="question">
+  <mat-radio-button #opt *ngFor="let option of question.options" [value]="option" style="padding: 5px;" appTestDirective [test]="0">
     {{option.text}}
   </mat-radio-button>
 </mat-radio-group>

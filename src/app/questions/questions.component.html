@@ -23,43 +23,76 @@
             <!--spacer-->
         </div>
 
-        <div fxLayout fxLayoutAlign="space-evenly">
-            <div>Question {{currentQuestionIndex+1}} of {{questions?.length}}</div>
-            <div>
-                <mat-icon>timer</mat-icon>
-                Remaining  {{timer}} secs
+<ng-container *ngIf="!endQuiz">
+    <div fxLayout fxLayoutAlign="space-evenly">
+        <div>Question {{currentQuestionIndex+1}} of {{questions?.length}}</div>
+        <div>
+            <mat-icon>timer</mat-icon>
+            Remaining  {{timer}} secs
+        </div>
+
+        <!-- <div>
+        
+           <button mat-raised-button >     <mat-icon>timer</mat-icon> DONE</button>
+        </div> -->
+    </div>
+
+    <div style="margin-top: 20px;">
+        <!--spacer-->
+    </div>
+ 
+    <div><mat-progress-bar mode="determinate" [value]="progressCount"></mat-progress-bar></div>
+
+    <div *ngIf="questions">
+        <app-question [question]="questions[currentQuestionIndex]"></app-question>
+    </div>
+
+
+    <div fxLayout fxLayoutAlign="space-evenly" *ngIf="questions">
+        <button mat-icon-button color="primary" (click)="prev()" [disabled]="currentQuestionIndex<=0">
+            <mat-icon style="font-size: 30px;">arrow_back_ios_new</mat-icon>
+          </button>
+
+          <button mat-icon-button color="primary" (click)="reset()" >
+            <mat-icon style="font-size: 30px;">refresh</mat-icon>
+          </button>
+
+          <button mat-icon-button color="primary" (click)="next()" [disabled]="!(this.currentQuestionIndex <= this.questions.length-1)">
+            <mat-icon style="font-size: 30px;">arrow_forward_ios</mat-icon>
+          </button>
+    </div>
+</ng-container>
+
+{{endQuiz}}
+        <ng-container *ngIf="endQuiz">
+            <div fxLayout fxLayoutGap="10" *ngIf="questions">
+                <div fxFlex="30">
+                    <img [src]="celebrationImage" style="width: 80px; height:50px ;" alt="celebration" fxFlexFill>
+                </div>
+                <div fxFlex="60">
+                    <div style="font-family:cursive; font-size: 30px; font-weight: 500;padding: 5px;">Congragulations!! You have completed the quiz.</div>
+                    <h4>Below is yout result:</h4>
+                    <p>Total Questions Attempted: {{questions.length}} </p>
+                    <p>Total correct Answered: {{getTotalCorrect().length}} </p>
+                    <p>Total Questions Missed due to elapsed time: {{getMissedTotal().length}} </p>
+                    <p>Total Wrong Answered: {{getTotalWrong().length}} </p>
+                    <p>Your Score : {{percentageScore()}}</p>
+                </div>
+            </div>
+            <div style="margin-top: 20px;">
+                <!--spacer-->
             </div>
 
-            <div>
-            
-               <button mat-raised-button >     <mat-icon>timer</mat-icon> DONE</button>
+            <div fxLayout fxLayoutAlign="space-evenly">
+                <button mat-icon-button  (click)="reset()" >
+                    <mat-icon >refresh</mat-icon>
+                  </button>
+
+                  <button mat-icon-button >
+                    <mat-icon>read_more</mat-icon>
+                    More result summary
+                  </button>
             </div>
-        </div>
-
-        <div style="margin-top: 20px;">
-            <!--spacer-->
-        </div>
-     
-        <div><mat-progress-bar mode="determinate" [value]="progressCount"></mat-progress-bar></div>
-
-        <div *ngIf="questions">
-            <app-question [question]="questions[currentQuestionIndex]"></app-question>
-        </div>
-
-
-        <div fxLayout fxLayoutAlign="space-evenly" *ngIf="questions">
-            <button mat-icon-button color="primary" (click)="prev()" [disabled]="currentQuestionIndex<=0">
-                <mat-icon style="font-size: 30px;">arrow_back_ios_new</mat-icon>
-              </button>
-
-              <button mat-icon-button color="primary" (click)="reset()" >
-                <mat-icon style="font-size: 30px;">refresh</mat-icon>
-              </button>
-
-              <button mat-icon-button color="primary" (click)="next()" [disabled]="!(this.currentQuestionIndex < this.questions.length-1)">
-                <mat-icon style="font-size: 30px;">arrow_forward_ios</mat-icon>
-              </button>
-        </div>
-
+        </ng-container>
     </mat-card>
 </div>

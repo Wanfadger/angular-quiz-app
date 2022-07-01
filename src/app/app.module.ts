@@ -13,6 +13,7 @@ import { QuestionsComponent } from './questions/questions.component';
 import { QuestionComponent } from './questions/question/question.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { TestDirectiveDirective } from './directives/test-directive.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     QuestionsComponent,
-    QuestionComponent
+    QuestionComponent,
+    TestDirectiveDirective
   ],
   imports: [
     BrowserModule,

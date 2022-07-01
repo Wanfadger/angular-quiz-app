@@ -12,7 +12,7 @@
                 <div fxLayout fxLayoutAlign="end" fxLayoutGap="30px">
                     <div>
                         <div style="font-size: 20px;font-weight: 550; font-family: cursive; padding: 5px;">Angular & Typescript</div>
-                        <div  >Welcome Back: <span style="font-style:italic; font-size: 16px;">wanfadger</span></div>
+                        <div  >Welcome Back: <span style="font-style:italic; font-size: 16px;">{{name}}</span></div>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
             <!--spacer-->
         </div>
      
-        <div><mat-progress-bar mode="determinate" value="40"></mat-progress-bar></div>
+        <div><mat-progress-bar mode="determinate" value="10"></mat-progress-bar></div>
 
         <div>
             <app-question [question]="questions[0]"></app-question>

@@ -9,14 +9,16 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
  formControl !:FormControl
+
   constructor(private _router:Router) { }
 
   ngOnInit(): void {
     this.formControl = new FormControl('', [Validators.required])
   }
 
-  toQuestions(){
-    console.log('ehehehe')
+  startQuiz(){
+    console.log(this.formControl.value)
+    localStorage.setItem("USER-NAME" , this.formControl.value)
   this._router.navigate(['Questions'])
   }
 

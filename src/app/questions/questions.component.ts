@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionsComponent implements OnInit {
   angularImage:string = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png"
+
+  name:string  = localStorage.getItem("USER-NAME") || ""
+
   constructor() { }
 
   questions:Question[] = [

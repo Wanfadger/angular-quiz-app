@@ -23,34 +23,40 @@
             <!--spacer-->
         </div>
 
-        <div fxLayout fxLayoutAlign="center" fxLayoutGap="50px">
-            <div>Question 1 of 10</div>
+        <div fxLayout fxLayoutAlign="space-evenly">
+            <div>Question {{currentQuestionIndex+1}} of {{questions?.length}}</div>
             <div>
                 <mat-icon>timer</mat-icon>
-                Remaining  60 secs</div>
+                Remaining  {{timer}} secs
+            </div>
+
+            <div>
+            
+               <button mat-raised-button >     <mat-icon>timer</mat-icon> DONE</button>
+            </div>
         </div>
 
         <div style="margin-top: 20px;">
             <!--spacer-->
         </div>
      
-        <div><mat-progress-bar mode="determinate" value="10"></mat-progress-bar></div>
+        <div><mat-progress-bar mode="determinate" [value]="progressCount"></mat-progress-bar></div>
 
-        <div>
-            <app-question [question]="questions[0]"></app-question>
+        <div *ngIf="questions">
+            <app-question [question]="questions[currentQuestionIndex]"></app-question>
         </div>
 
 
-        <div fxLayout fxLayoutAlign="space-evenly">
-            <button mat-icon-button color="primary" >
+        <div fxLayout fxLayoutAlign="space-evenly" *ngIf="questions">
+            <button mat-icon-button color="primary" (click)="prev()" [disabled]="currentQuestionIndex<=0">
                 <mat-icon style="font-size: 30px;">arrow_back_ios_new</mat-icon>
               </button>
 
-              <button mat-icon-button color="primary" >
+              <button mat-icon-button color="primary" (click)="reset()" >
                 <mat-icon style="font-size: 30px;">refresh</mat-icon>
               </button>
 
-              <button mat-icon-button color="primary" >
+              <button mat-icon-button color="primary" (click)="next()" [disabled]="!(this.currentQuestionIndex < this.questions.length-1)">
                 <mat-icon style="font-size: 30px;">arrow_forward_ios</mat-icon>
               </button>
         </div>

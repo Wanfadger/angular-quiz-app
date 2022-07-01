@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Question } from '../questions.component';
+import { Question, QuestionOption } from '../questions.service';
 
 @Component({
   selector: 'app-question',
@@ -13,4 +13,9 @@ export class QuestionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selectAnswer(selectedOption:QuestionOption){
+    console.log(selectedOption)
+    this.question.selectedOption = selectedOption
+    console.log(this.question)
+  }
 }

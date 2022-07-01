@@ -1,0 +1,65 @@
+[
+    {
+        "question":"Which of the following statement is correct for Angular?" ,
+        "description":"Angular is a frontend framework written using JavaScript",
+        "options":[
+        {"text":"Angular is an HTML framework" , "isCorrect":false},
+        {"text":"Angular is a Java framework" , "isCorrect":false},
+        {"text":"Angular is a JavaScript framework" , "isCorrect":true},
+        {"text":"Angular is a SQL framework" , "isCorrect":false}
+    ]},
+
+    {"question":"Angular is perfect for?" , 
+        "description":"Angular is perfect for Single Page Applications (SPAs).",
+        "options":[
+        {"text":"SPAs" , "isCorrect":true},
+        {"text":"MPAs" , "isCorrect":false},
+        {"text":"DPAs" , "isCorrect":false},
+        {"text":"CPAs" , "isCorrect":false}
+    ]},
+
+    {"question":" Which of the following is the correct syntax for writing Angular expressions?" ,
+        "description":"{{expression}} : is The correct syntax for writing Angular template expressions",
+        "options":[
+        {"text":"(expression)" , "isCorrect":false},
+        {"text":"{{expression}}" , "isCorrect":true},
+        {"text":"{{{expression}}}" , "isCorrect":false},
+        {"text":"[expression]" , "isCorrect":false}
+    ]},
+
+    {"question":" Do AngularJS provide reusable components?" ,
+        "description":"Angular provides reusable components.",
+        "options":[
+        {"text":"YES" , "isCorrect":true},
+        {"text":"NO" , "isCorrect":false}
+    ]},
+
+    {"question":"Which of the following directive is used to bind the application data to the HTML view in Angular" ,
+        "description":"The ng-bind directive is used to bind the application data to the HTML view in the Angular application.",
+         "options":[
+        {"text":"ng-app directive" , "isCorrect":false},
+        {"text":"ng-model directive" , "isCorrect":false},
+        {"text":"ng-bind directive" , "isCorrect":true},
+        {"text":"ng-init directive" , "isCorrect":false}
+    ]},
+
+    {"question":"Which of the following syntax is correct for applying multiple filters in AngularJS?" ,
+        "description":" The syntax of applying multiple filters in Angular can be written as: {{ expression | filter1 | filter2 | ... }} , separated by pipes",
+        "options":[
+        {"text":"{{ expression | filter1 | filter2 | ... }}" , "isCorrect":true},
+        {"text":"{{ expression | {filter1} | {filter2} | ... }}" , "isCorrect":false},
+        {"text":"{{ expression - {filter1} - {filter2} - ... }}" , "isCorrect":true},
+        {"text":"{{ {filter1} | {filter2} | ...-expression}}" , "isCorrect":false}
+    ]},
+
+    {"question":"Which of the following community Angular belong to?" , 
+        "description":"Angular is developed and maintained by the google community",
+        "options":[
+        {"text":"Twitter" , "isCorrect":false},
+        {"text":"Facebook" , "isCorrect":false},
+        {"text":"Google" , "isCorrect":true},
+        {"text":"Microsoft" , "isCorrect":false}
+    ]}
+
+
+]

@@ -12,6 +12,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { QuestionsComponent } from './questions/questions.component';
 import { QuestionComponent } from './questions/question/question.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatWidgetModule,
     FlexLayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
